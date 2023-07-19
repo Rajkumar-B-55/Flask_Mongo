@@ -34,6 +34,15 @@ class Base:
 
 
 class User(Base):
+    """
+           Initialize a User instance.
+
+           Args:
+               first_name (str): The first name of the user.
+               last_name (str): The last name of the user.
+               email (str): The email address of the user.
+               password (str): The password of the user.
+           """
     def __init__(self, first_name, last_name, is_active, email, password):
         super().__init__()
         self.first_name = first_name
@@ -59,6 +68,11 @@ class User(Base):
 
     @classmethod
     def by_id(cls, user_id):
+        """
+        BY user ID
+        :param user_id:
+        :return:
+        """
         collection = NoSQlConfig.collection
         user_data = collection.find_one({"_id": user_id})
         if user_data:
@@ -67,6 +81,11 @@ class User(Base):
 
     @classmethod
     def by_username(cls, username):
+        """
+        By USer EMail
+        :param username:
+        :return:
+        """
         collection = NoSQlConfig.collection
         user_data = collection.find_one({"email": username})
         if user_data:

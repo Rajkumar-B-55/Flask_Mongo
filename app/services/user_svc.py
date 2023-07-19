@@ -7,6 +7,19 @@ from lib.utils import encode_password
 class UserService:
     @classmethod
     def register_user(cls, req_json):
+
+        """
+    Register a new user.
+
+    Expects JSON data in the request body with the following fields:
+    - first_name
+    - last_name
+    - email
+    - password
+
+    Returns:
+        JSON response with a message indicating successful registration.
+    """
         try:
             first_name = req_json['first_name']
             last_name = req_json['last_name']

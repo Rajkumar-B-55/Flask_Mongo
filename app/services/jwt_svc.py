@@ -15,6 +15,17 @@ class UserAuth:
 
     @classmethod
     def login(cls, incoming_password, hashed_password, user_id, user_email):
+
+        """
+           Authenticate a user.
+
+           Expects JSON data in the request body with the following fields:
+           - email
+           - password
+
+           Returns:
+               JSON response with an access token upon successful authentication.
+           """
         if validate_password(incoming_password, hashed_password):
             user_id = str(user_id)
             expiration_time = datetime.datetime.utcnow() + datetime.timedelta(minutes=45)
