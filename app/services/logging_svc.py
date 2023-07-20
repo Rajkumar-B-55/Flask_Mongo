@@ -1,4 +1,5 @@
 import logging
+import sys
 
 
 class LoggingService:
@@ -7,7 +8,7 @@ class LoggingService:
 
     @classmethod
     def initialize(cls, app):
-        logging.basicConfig(filename='record.log', level=logging.DEBUG,
+        logging.basicConfig(stream=sys.stdout,filename='record.log', level=logging.DEBUG,
                             format=f'%(asctime)s %(levelname)s %(name)s %(threadName)s : %(message)s')
         cls.logger = logging.getLogger()
         cls.logger.setLevel(logging.DEBUG)
