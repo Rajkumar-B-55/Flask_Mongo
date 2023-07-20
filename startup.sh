@@ -5,4 +5,3 @@
 
 pip install -r requirements.txt
 # Run your Flask application
-/opt/render/project/src/.venv/bin/python main_server.py
