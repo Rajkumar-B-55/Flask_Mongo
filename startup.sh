@@ -1,5 +1,4 @@
 #!/bin/bash
-chmod +x startup.sh
 
 # Update pip in the virtual environment
 /opt/render/project/src/.venv/bin/python -m pip install --upgrade pip
